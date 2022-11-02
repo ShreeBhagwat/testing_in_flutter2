@@ -37,7 +37,7 @@ class RegisterScreen extends StatelessWidget {
                   icon: Icons.person,
                   validator: ((value) {
                     if (value != null && value.length <= 3) {
-                      return 'Name must be at least 3 characters';
+                      return kNameErrorText;
                     }
                     return null;
                   }),
@@ -54,7 +54,7 @@ class RegisterScreen extends StatelessWidget {
                     final regex = RegExp(pattern);
 
                     return (value != null && !regex.hasMatch(value))
-                        ? 'Please Enter a Valid Email'
+                        ? kEmailErrorText
                         : null;
                   }),
                 ),
@@ -66,7 +66,7 @@ class RegisterScreen extends StatelessWidget {
                   isObsecure: true,
                   validator: ((value) {
                     if (value != null && value.length <= 6) {
-                      return 'Password must be at least 6 characters';
+                      return kPasswordErrorText;
                     }
                     return null;
                   }),
