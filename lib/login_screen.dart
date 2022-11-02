@@ -26,7 +26,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const Text(
                   'Login Screen',
-                  style: TextStyle(fontSize: 30),
+                  style: TextStyle(fontSize: 30, fontFamily: 'Roboto'),
                 ),
                 CustomTextFormField(
                   key: emailTextKey,
@@ -40,7 +40,7 @@ class LoginScreen extends StatelessWidget {
                     final regex = RegExp(pattern);
 
                     return (value != null && !regex.hasMatch(value))
-                        ? 'Please Enter a Valid Email'
+                        ? kEmailErrorText
                         : null;
                   }),
                 ),
@@ -52,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                   isObsecure: true,
                   validator: ((value) {
                     if (value != null && value.length <= 6) {
-                      return 'Password must be at least 6 characters';
+                      return kPasswordErrorText;
                     }
                     return null;
                   }),
@@ -60,7 +60,7 @@ class LoginScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: ElevatedButton(
-                    key: loginButtonKey,
+                      key: loginButtonKey,
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           Navigator.push(
