@@ -49,8 +49,7 @@ extension WidgetTesterExtension on WidgetTester {
 
     binding.window.physicalSizeTestValue = testCaseScreenInfo.screenSize;
 
-    //For the reported size to be 1:1 with the actual size
-    //Note: this doesn't default to 1:1
+  
     binding.window.devicePixelRatioTestValue = testCaseScreenInfo.pixedRatio;
 
     //Reset
