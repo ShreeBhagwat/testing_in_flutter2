@@ -58,23 +58,28 @@ class LoginScreen extends StatelessWidget {
                   }),
                 ),
                 Padding(
+                  
                   padding: const EdgeInsets.all(10.0),
-                  child: ElevatedButton(
-                      key: loginButtonKey,
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const HomeScreen(),
-                            ),
-                          );
-                        }
-                      },
-                      child: const SizedBox(
-                          width: double.infinity,
-                          height: 50,
-                          child: Center(child: Text('Login')))),
+                  child: Tooltip(
+                    message: 'LoginButton',
+                    child: ElevatedButton(
+                                  
+                        key: loginButtonKey,
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomeScreen(),
+                              ),
+                            );
+                          }
+                        },
+                        child: const SizedBox(
+                            width: double.infinity,
+                            height: 50,
+                            child: Center(child: Text('Login')))),
+                  ),
                 ),
                 InkWell(
                   key: notAUserTextKey,
