@@ -5,12 +5,14 @@ import 'package:testing_in_flutter2/register_screen.dart';
 import 'widget_tester_extension.dart';
 
 void main() {
-  testWidgetsMultipleScreenSizes('Register-Page', registerWidgetTest);
+  // testWidgetsMultipleScreenSizes('Register-Page', registerWidgetTest);
+  testWidgets('Register-Page', (tester) => registerWidgetTest(tester));
+
 }
 
 Future<void> registerWidgetTest(
-    WidgetTester tester, TestCaseScreenInfo? testCaseScreenInfo) async {
+    WidgetTester tester, ) async {
   await tester.pumpWidget(MaterialApp(home: RegisterScreen()));
   await tester.pumpAndSettle();
-  await doGolden('Register-page', 'Initial Pagee', testCaseScreenInfo);
+  
 }

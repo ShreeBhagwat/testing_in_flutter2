@@ -1,0 +1,11 @@
+description: "login first flow"
+---
+- expectVisible: "Login"
+- expectVisible: "Email Address"
+- expectVisible: "Password"
+- tapOn: "Email Address"
+- inputText: "abcd"
+- tapOn: "Password"
+- inputText: "1234"
+- tapOn: "LoginButton"
+- expectVisible: 'Please enter a valid email address'
